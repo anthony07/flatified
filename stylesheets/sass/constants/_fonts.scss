@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'GibsonRegular';
+    src: url('../font/proximanova-regular.ttf') format('truetype'),
+         url('../font/proximanova-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$gibson-regular: 'GibsonRegular', sans-serif;

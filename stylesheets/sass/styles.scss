@@ -1,0 +1,30 @@
+@import 'constants/fonts';
+@import 'bourbon/bourbon';
+@import 'grid-settings';
+@import 'neat/neat';
+
+//-------------------
+html, body {
+  height: 100%;
+}
+
+body {
+  font: normal 100%/1em $gibson-regular;
+}
+
+a {
+  @include transition(all 0.5s ease-in-out);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//-------------------
+.container {
+  @include outer-container;
+}
+
+.cf {
+  @include clearfix;
+}
