@@ -1,0 +1,23 @@
+.btn {
+  @include transition(all 0.2s ease-out);
+  display: inline-block;
+  margin: 0 0.5em;
+  padding: 0.5em 1em;
+  width: auto;
+  height: auto;
+  border: 1px solid darken(white, 25%);
+  border-radius: 2px;
+  background: darken(white, 20%);
+  color: gray;
+  text-shadow: none;
+  font-weight: normal;
+  line-height: 1;
+
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background: darken(white, 25%);
+  }
+}
