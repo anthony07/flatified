@@ -13,10 +13,88 @@ if (theme_get_setting('clear_registry')) {
   drupal_theme_rebuild();
 }
 
-// Add Zen Tabs styles
-if (theme_get_setting('flatfluffy_tabs')) {
-  drupal_add_css( drupal_get_path('theme', 'flatfluffy') .'/css/tabs.css');
+/**
+ * Implements hook_css_alter().
+ * Clean up unecessary stylesheets.
+ */
+function flatfluffy_css_alter(&$css) {
+  unset($css[drupal_get_path('module', 'field') . '/theme/field.css']);
+  unset($css[drupal_get_path('module', 'node') . '/node.css']);
+  unset($css[drupal_get_path('module', 'search') . '/search.css']);
+  unset($css[drupal_get_path('module', 'user') . '/user.css']);
+  unset($css[drupal_get_path('module', 'views') . '/css/views.css']);
+  unset($css[drupal_get_path('module', 'tagclouds') . '/tagclouds.css']);
 }
+
+/**
+ * Implements hook_js_alter().
+ * Updates jQuery without installing jQuery update module.
+ */
+function flatfluffy_js_alter(&$javascript) {
+  $jquery = drupal_get_path('theme', 'flatfluffy') . '/assets/js/jquery.min.js';
+  $javascript[$jquery] = $javascript['misc/jquery.js'];
+  unset($javascript['misc/jquery.js']);
+  $javascript[$jquery]['version'] = '1.7.2';
+  $javascript[$jquery]['data'] = $jquery;
+}
+
+
+/**
+ * Alters the image formatting
+ */
+function tfh_image_formatter($variables) {
+  $item = $variables['item'];
+  $image = array('path' => $item['uri'], 'alt' => $item['alt'], );
+
+  if (isset($item['attributes'])) {
+    $image['attributes'] = $item['attributes'];
+  }
+
+  if (isset($item['width']) && isset($item['height'])) {
+    $image['width'] = $item['width'];
+    $image['height'] = $item['height'];
+  }
+
+  // Do not output an empty 'title' attribute.
+  if (drupal_strlen($item['title']) > 0) {
+    $image['title'] = $item['title'];
+  }
+
+  if ($variables['image_style']) {
+    $image['style_name'] = $variables['image_style'];
+    $output = theme('image_style', $image);
+  } else {
+    $output = theme('image', $image);
+  }
+
+  //Links with Images
+  if (!empty($variables['path']['path'])) {
+    $path = $variables['path']['path'];
+    $options = $variables['path']['options'];
+    $options['html'] = TRUE; //imporant to make the markup
+    $title = '';
+    $attributes = array();
+
+    // Add extra attribute for Slimbox to work
+    if($image['style_name'] == 'gallery') {
+      $title = isset($image['title']) ? $image['title'] : $image['alt'];
+      $attributes = array('attributes' => array('class' => 'gallery-image',
+                                                'rel' => 'lightbox-preview',
+                                                'title' => $title,
+                                                'alt' => $image['alt']));
+    }
+    else {
+      $title = $variables['path']['options']['entity'] -> title;
+      $attributes = array('attributes' => array('title' => $title, 'alt' => $image['alt']));
+    }
+
+    $link = array_merge($options, $attributes);
+    $output = l($output, $path, $link);
+  }
+
+  return $output;
+}
+
 
 function flatfluffy_preprocess_html(&$vars) {
   global $user, $language;

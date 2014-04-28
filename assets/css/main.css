@@ -1,115 +1,361 @@
-/* Web Fonts from fontspring.com  All OpenType features and all extended glyphs have been removed. Fully installable fonts can be purchased at http://www.fontspring.com  The fonts included in this stylesheet are subject to the End User License you purchased from Fontspring. The fonts are protected under domestic and international trademark and copyright law. You are prohibited from modifying, reverse engineering, duplicating, or distributing this font software.  (c) 2010-2014 Fontspring  The fonts included are copyrighted by the vendor listed below.  Vendor:      Canada Type License URL: http://www.fontspring.com/fflicense/canada-type  */
-@font-face { font-family: GibsonRegular; font-weight: normal; font-style: normal; src: url("assets/fonts/Gibson/Gibson-Regular-webfont.eot"); src: url("assets/fonts/Gibson/Gibson-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Gibson/Gibson-Regular-webfont.woff") format("woff"), url("assets/fonts/Gibson/Gibson-Regular-webfont.ttf") format("truetype"), url("assets/fonts/Gibson/Gibson-Regular-webfont.svg#GibsonRegular") format("svg"); }
-@font-face { font-family: GibsonLightBold; font-weight: normal; font-style: normal; src: url("assets/fonts/Gibson/Gibson-SemiBold-webfont.eot"); src: url("assets/fonts/Gibson/Gibson-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Gibson/Gibson-SemiBold-webfont.woff") format("woff"), url("assets/fonts/Gibson/Gibson-SemiBold-webfont.ttf") format("truetype"), url("assets/fonts/Gibson/Gibson-SemiBold-webfont.svg#GibsonLightBold") format("svg"); }
-@font-face { font-family: GibsonItalic; font-weight: normal; font-style: normal; src: url("assets/fonts/Gibson/Gibson-Italic-webfont.eot"); src: url("assets/fonts/Gibson/Gibson-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Gibson/Gibson-Italic-webfont.woff") format("woff"), url("assets/fonts/Gibson/Gibson-Italic-webfont.ttf") format("truetype"), url("assets/fonts/Gibson/Gibson-Italic-webfont.svg#GibsonItalic") format("svg"); }
-* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2014 Fontspring
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Canada Type
+ * License URL: http://www.fontspring.com/fflicense/canada-type
+ *
+ */
+@font-face {
+  font-family: GibsonRegular;
+  font-weight: normal;
+  font-style: normal;
+  src: url("assets/fonts/Gibson/Gibson-Regular-webfont.eot");
+  src: url("assets/fonts/Gibson/Gibson-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Gibson/Gibson-Regular-webfont.woff") format("woff"), url("assets/fonts/Gibson/Gibson-Regular-webfont.ttf") format("truetype"), url("assets/fonts/Gibson/Gibson-Regular-webfont.svg#GibsonRegular") format("svg");
+}
+@font-face {
+  font-family: GibsonLightBold;
+  font-weight: normal;
+  font-style: normal;
+  src: url("assets/fonts/Gibson/Gibson-SemiBold-webfont.eot");
+  src: url("assets/fonts/Gibson/Gibson-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Gibson/Gibson-SemiBold-webfont.woff") format("woff"), url("assets/fonts/Gibson/Gibson-SemiBold-webfont.ttf") format("truetype"), url("assets/fonts/Gibson/Gibson-SemiBold-webfont.svg#GibsonLightBold") format("svg");
+}
+@font-face {
+  font-family: GibsonItalic;
+  font-weight: normal;
+  font-style: normal;
+  src: url("assets/fonts/Gibson/Gibson-Italic-webfont.eot");
+  src: url("assets/fonts/Gibson/Gibson-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Gibson/Gibson-Italic-webfont.woff") format("woff"), url("assets/fonts/Gibson/Gibson-Italic-webfont.ttf") format("truetype"), url("assets/fonts/Gibson/Gibson-Italic-webfont.svg#GibsonItalic") format("svg");
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-html { font-family: GibsonRegular, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+html {
+  font-family: GibsonRegular, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 
-body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-p, article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+p,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
 
-audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
 
-audio:not([controls]) { display: none; height: 0; }
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
 
-[hidden], template { display: none; }
+[hidden],
+template {
+  display: none;
+}
 
-a { background: transparent; }
-a:active, a:hover { outline: 0; cursor: pointer; }
+a {
+  background: transparent;
+}
+a:active, a:hover {
+  outline: 0;
+  cursor: pointer;
+}
 
-abbr[title] { border-bottom: 1px dotted; }
+abbr[title] {
+  border-bottom: 1px dotted;
+}
 
-b, strong { font-weight: normal; font-family: GibsonLightBold, sans-serif; }
+b,
+strong {
+  font-weight: normal;
+  font-family: GibsonLightBold, sans-serif;
+}
 
-i, cite, em, var, address, dfn { font-style: normal; font-family: GibsonItalic, sans-serif; }
+i,
+cite,
+em,
+var,
+address,
+dfn {
+  font-style: normal;
+  font-family: GibsonItalic, sans-serif;
+}
 
-h1, h2, h3, h4, h4, h6 { margin: 14px 0; font-weight: normal; font-family: GibsonLightBold, sans-serif; line-height: 1.6; }
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+  margin: 14px 0;
+  font-weight: normal;
+  font-family: GibsonLightBold, sans-serif;
+  line-height: 1.6;
+}
 
-h1 { font-size: 28px; }
+h1 {
+  font-size: 28px;
+}
 
-h2 { font-size: 24px; }
+h2 {
+  font-size: 24px;
+}
 
-h3 { font-size: 20px; }
+h3 {
+  font-size: 20px;
+}
 
-h4 { font-size: 18px; }
+h4 {
+  font-size: 18px;
+}
 
-h5 { font-size: 16px; }
+h5 {
+  font-size: 16px;
+}
 
-h6, p { font-size: 14px; }
+h6, p {
+  font-size: 14px;
+}
 
-p { margin: 0 0 1em; }
+p {
+  margin: 0 0 1em;
+}
 
-mark { background: #fafafa; color: black; }
+mark {
+  background: #fafafa;
+  color: black;
+}
 
-small, sub, sup { font-size: 8.65266px; }
+small,
+sub,
+sup {
+  font-size: 8.65266px;
+}
 
-sub, sup { position: relative; vertical-align: baseline; line-height: 0; }
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  line-height: 0;
+}
 
-sup { top: -0.5em; }
+sup {
+  top: -0.5em;
+}
 
-sub { bottom: -0.25em; }
+sub {
+  bottom: -0.25em;
+}
 
-img { border: none; }
+img {
+  border: none;
+}
 
-svg:not(:root) { overflow: hidden; }
+svg:not(:root) {
+  overflow: hidden;
+}
 
-figure { margin: 1em 40px; }
+figure {
+  margin: 1em 40px;
+}
 
-hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
 
-pre { overflow: auto; }
+pre {
+  overflow: auto;
+}
 
-code, kbd, pre, samp { font-size: 14px; font-family: GibsonRegular, sans-serif; }
+code,
+kbd,
+pre,
+samp {
+  font-size: 14px;
+  font-family: GibsonRegular, sans-serif;
+}
 
-button, input, optgroup, select, textarea { margin: 0; color: inherit; font: inherit; }
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
 
-button { overflow: visible; }
+button {
+  overflow: visible;
+}
 
-button, select { text-transform: none; }
+button,
+select {
+  text-transform: none;
+}
 
-button, html input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
 
-button[disabled], html input[disabled] { cursor: default; }
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
 
-button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0; }
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
 
-input { line-height: normal; }
+input {
+  line-height: normal;
+}
 
-input[type="checkbox"], input[type="radio"] { padding: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+}
 
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
 
-input[type="search"] { -webkit-appearance: textfield; }
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
 
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
 
-fieldset { margin: 0 2px; padding: 0.5em 0.6em 0.75em; border: 1px solid #b3b3b3; }
+fieldset {
+  margin: 0 2px;
+  padding: 0.5em 0.6em 0.75em;
+  border: 1px solid #b3b3b3;
+}
 
-legend { padding: 0; border: none; }
+legend {
+  padding: 0;
+  border: none;
+}
 
-textarea { overflow: auto; }
+textarea {
+  overflow: auto;
+}
 
-optgroup { font-weight: normal; font-family: GibsonLightBold, sans-serif; }
+optgroup {
+  font-weight: normal;
+  font-family: GibsonLightBold, sans-serif;
+}
 
-table { border-spacing: 0; border-collapse: collapse; }
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
 
-td, th { padding: 0; }
+td,
+th {
+  padding: 0;
+}
 
-ul, ol { margin: 1em 0; padding: 0 0 0 1.5em; }
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 1.5em;
+}
 
-li { margin: 0; padding: 0; }
-li ul, li ol { margin-left: 1em; }
+li {
+  margin: 0;
+  padding: 0;
+}
+li ul, li ol {
+  margin-left: 1em;
+}
 
-.clearfix:after { content: ""; display: table; clear: both; }
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-.hidden { display: none; }
+.hidden {
+  display: none;
+}
 
-.invisible { visibility: hidden; }
+.invisible {
+  visibility: hidden;
+}
 
-.transparent { opacity: 0; }
+.transparent {
+  opacity: 0;
+}
 
-.btn { -webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; transition: all 0.2s ease-out; display: inline-block; margin: 0 0.5em; padding: 0.5em 1em; width: auto; height: auto; border: 1px solid #bfbfbf; border-radius: 2px; background: #cccccc; color: gray; text-shadow: none; font-weight: normal; line-height: 1; }
-.btn i { margin-right: 5px; }
-.btn:hover { background: #bfbfbf; }
+.btn {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  display: inline-block;
+  margin: 0 0.5em;
+  padding: 0.5em 1em;
+  width: auto;
+  height: auto;
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  background: #cccccc;
+  color: gray;
+  text-shadow: none;
+  font-weight: normal;
+  line-height: 1;
+}
+.btn i {
+  margin-right: 5px;
+}
+.btn:hover {
+  background: #bfbfbf;
+}
